@@ -1,0 +1,77 @@
+PROGRAM CALL: python /home/lin1209/perov_ml_github/prepare_ligand_batch.py -opt_method xtb -queue bsavoie --geo
+
+You're using xtb as your geometry optimization method
+submitting DFT geometry optimization
+the following xyzs are submitted for geometry optimization: NH3_2C_Angew-1+H_minimized.xyz
+waiting for jobs ['18527526'] to complete....
+submitting charge singlepoint jobs
+waiting for jobs ['18527538'] to complete....
+submitting extract charge
+waiting for jobs ['18527614'] to complete....
+run makedb
+
+
+ERROR LIST:
+NH3_2C_Angew-1+H_minimized.xyz charge fitting job failed
+PROGRAM CALL: python /home/lin1209/perov_ml_github/prepare_ligand_batch.py -opt_method xtb -queue bsavoie --geo
+
+You're using xtb as your geometry optimization method
+submitting DFT geometry optimization
+the following xyzs are submitted for geometry optimization: 
+submitting charge singlepoint jobs
+submitting extract charge
+waiting for jobs ['18527673'] to complete....
+run makedb
+
+
+ERROR LIST:
+NH3_2C_Angew-1+H_minimized.xyz charge fitting job failed
+PROGRAM CALL: python /home/lin1209/perov_ml_github/prepare_ligand_batch.py -opt_method xtb -queue bsavoie --geo
+
+You're using xtb as your geometry optimization method
+submitting DFT geometry optimization
+the following xyzs are submitted for geometry optimization: 
+submitting charge singlepoint jobs
+submitting extract charge
+waiting for jobs ['18527797'] to complete....
+run makedb
+
+
+ERROR LIST:
+NH3_2C_Angew-1+H_minimized.xyz charge fitting job failed
+PROGRAM CALL: python /home/lin1209/perov_ml_github/prepare_ligand_batch.py -opt_method xtb -queue bsavoie --geo
+
+You're using xtb as your geometry optimization method
+submitting DFT geometry optimization
+the following xyzs are submitted for geometry optimization: 
+submitting charge singlepoint jobs
+submitting extract charge
+waiting for jobs ['18528005'] to complete....
+run makedb
+
+
+ERROR LIST:
+NH3_2C_Angew-1+H_minimized.xyz makedb failed
+PROGRAM CALL: python /home/lin1209/perov_ml_github/prepare_ligand_batch.py -opt_method xtb -queue bsavoie --geo
+
+You're using xtb as your geometry optimization method
+submitting DFT geometry optimization
+the following xyzs are submitted for geometry optimization: 
+submitting charge singlepoint jobs
+submitting extract charge
+run makedb
+
+
+ERROR LIST:
+NH3_2C_Angew-1+H_minimized.xyz makedb failed
+PROGRAM CALL: python /home/lin1209/perov_ml_github/prepare_ligand_batch.py -opt_method xtb -queue bsavoie --geo
+
+You're using xtb as your geometry optimization method
+submitting DFT geometry optimization
+the following xyzs are submitted for geometry optimization: 
+submitting charge singlepoint jobs
+submitting extract charge
+run makedb
+
+
+ERROR LIST:
