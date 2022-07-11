@@ -1,8 +1,8 @@
 # high-throughput-2D-Perovskite-ligand-screening-tool
 # Software requirement: 
-- ORCA version 4.0
-- LAMMPS
-- AmberTools
+- ORCA version 4.0: https://www.faccts.de/orca/
+- LAMMPS: https://www.lammps.org/
+- AmberTools: https://ambermd.org/AmberTools.php
 - SBATCH submission system
 # 1. MD
 - step0.prepare_ligand_batch: parametrized xyz files in the executed folder in batch
