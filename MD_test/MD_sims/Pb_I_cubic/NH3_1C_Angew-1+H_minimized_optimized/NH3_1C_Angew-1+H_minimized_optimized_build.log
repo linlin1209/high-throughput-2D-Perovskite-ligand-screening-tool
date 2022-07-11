@@ -1,0 +1,51 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PROGRAM CALL: python /home/lin1209/perov_code/perovskite_builder.py C Pb I 3.2 -dims 3 0 3 -surface NH3_1C_Angew-1+H_minimized_optimized.xyz -FF NH3_1C_Angew-1+H_minimized_optimized.db --monolayer -o NH3_1C_Angew-1+H_minimized_optimized -mixing_rule lb -y_pad 30.0
+
+
+*.xyz file specified for the surface cation. Reading file "NH3_1C_Angew-1+H_minimized_optimized.xyz"...
+	Parsing force field information...
+		Parsing bonds...
+		Parsing angles...
+		Parsing dihedrals...
+	Total charge on surface cation is 1.000002 |e|
+		Adjusting charge to unity...
+		correction per atom: -1.1111111111430618e-07
+		Total charge on surface cation after adjustment is now 0.9999999999999999 |e|
+	Total number of atoms in surface cation: 18
+	Length of surface anion: 5.995259441535465, index: 16
+
+Building unit cell...
+	Constructing monolayer unit cell (A2BX4)...
+	Number of unit cells expected: 16
+	Number of atoms in unit cell (A2BX4): 41
+
+Building perovskite...
+	Number of atoms expected: 656
+
+
+Statistics:
+	Number of atoms placed: 656
+	Number of unit cells placed: 16
+	Box dimensions: 
+		-3.200      22.400   
+		-43.780     43.780   
+		-3.200      22.400   
+	Indices of head atoms in surface cations (LAMMPS style): 6 24 47 65 88 106 129 147 170 188 211 229 252 270 293 311 334 352 375 393 416 434 457 475 498 516 539 557 580 598 621 639
+	Number of Surface molecules placed: 32
+	Total charge:  0.000000    |e|
+Elements number: 656
+
+Writing "NH3_1C_Angew-1+H_minimized_optimized.xyz" output
+
+Writing LAMMPS data file "NH3_1C_Angew-1+H_minimized_optimized.data"
+
+Lead atom types:
+    Pb-I: 10
+
+Writing atom type correspondence file "NH3_1C_Angew-1+H_minimized_optimized_correspondence.map"
+Writing mapfile (NH3_1C_Angew-1+H_minimized_optimized_map.map)...
+Writing LAMMPS tether fix to "NH3_1C_Angew-1+H_minimized_optimized_tether.fix"...
+
+Finished!
+

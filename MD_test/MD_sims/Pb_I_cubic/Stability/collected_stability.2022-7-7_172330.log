@@ -1,0 +1,28 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+PROGRAM CALL: python /home/lin1209/perov_ml_github/MD/step3.collect_stabilities.py -name None
+
+Processing NH3_1C_Angew-1+H_minimized_optimized...
+   Bond_lqe avg:   1.0017 with 0 NAN - diff: 0.001670303052600186 --> Passed
+   Angle_var avg:  22.8464 with 0 NAN - diff: 22.846382075291803 -> Passed
+    Comments: True
+
+Summary:
+
+Passed (1):
+  NH3_1C_Angew-1+H_minimized_optimized
+
+Failed (0):
+
+Missing (0):
+
+Problematic (0):
+
+Total:       1
+Passed:      1
+Failed:      0
+Missing:     0
+Problematic: 0
+
+Finished!
+
