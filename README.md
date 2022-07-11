@@ -3,7 +3,7 @@
 - ORCA version 4.0: https://www.faccts.de/orca/
 - LAMMPS: https://www.lammps.org/
 - AmberTools: https://ambermd.org/AmberTools.php
-- SBATCH submission system
+- Slurm: https://slurm.schedmd.com/
 # 1. MD
 - step0.prepare_ligand_batch: parametrized xyz files in the executed folder in batch
 - step1.build_bulk_sims: writting LAMMPS MD simulation files and submitting MD jobs
