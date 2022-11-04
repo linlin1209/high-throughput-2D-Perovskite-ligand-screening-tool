@@ -1,4 +1,5 @@
 # High-Throughput-2D-Perovskite-Ligand-Screening-Tool
+## Author: Zih-Yu Lin and Stephen B. Shiring
 ## Software requirement: 
 - ORCA version 4.0: https://www.faccts.de/orca/
 - LAMMPS: https://www.lammps.org/
