@@ -16,6 +16,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from imblearn.over_sampling import RandomOverSampler
+from imblearn.over_sampling import SMOTE
+from sklearn.model_selection import LeaveOneOut
 
 def main(argv):
     random.seed(0)
@@ -75,32 +77,42 @@ def train_tune(data,label,epoch=1,model='dt'):
     #X_train, X_test, y_train, y_test = train_test_split(data, label, test_size=0.2,random_state=0)
     #### Use oversampling
     # define oversampling strategy
-    oversample = RandomOverSampler(sampling_strategy='minority')
+    #oversample = RandomOverSampler(sampling_strategy='minority')
+    oversample = SMOTE(sampling_strategy='minority')
     # fit and apply the transform
     X_over, y_over = oversample.fit_resample(data, label)
     X_train, X_test, y_train, y_test = train_test_split(X_over, y_over, test_size=0.2,random_state=0)
 
+    cv = LeaveOneOut()
+    
     if model == 'dt':
        tuned_parameters = [{'max_depth':list(range(1,20))}]
-       clf = GridSearchCV(DecisionTreeClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(DecisionTreeClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(DecisionTreeClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     elif model == 'KNN':
        tuned_parameters = [{'n_neighbors':list(range(3,10))}]
-       clf = GridSearchCV(KNeighborsClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(KNeighborsClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(KNeighborsClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     elif model == 'LR_l1':
        tuned_parameters = [{'C':[1e-3,1e-2,0.1,1,10,1e2,1e3],'penalty':['l1'],'solver':['saga'],'max_iter':[200],'multi_class':['ovr']}]
-       clf = GridSearchCV(LogisticRegression(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(LogisticRegression(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(LogisticRegression(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     elif model == 'LR_l2':
        tuned_parameters = [{'C':[1e-3,1e-2,0.1,1,10,1e2,1e3],'penalty':['l2']}]
-       clf = GridSearchCV(LogisticRegression(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(LogisticRegression(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(LogisticRegression(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64) 
     elif model == 'SVC':
        tuned_parameters = [{'C':[1e-3,1e-2,0.1,1,10,1e2,1e3],'gamma':['auto']}]
-       clf = GridSearchCV(SVC(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(SVC(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(SVC(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     elif model == 'GNB':
        tuned_parameters = [{'var_smoothing':[1e-9]}]
-       clf = GridSearchCV(GaussianNB(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(GaussianNB(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(GaussianNB(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     elif model == 'rf':
        tuned_parameters = [{'max_depth':list(range(1,20)),'bootstrap':[True],'oob_score':[True,False]}]
-       clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       #clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+       clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     clf.fit(X_train,y_train)
     reports = []
     reports.append("Best parameters set found on development set:\n\n")
