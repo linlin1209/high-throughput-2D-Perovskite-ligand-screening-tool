@@ -11,6 +11,8 @@ import numpy as np
 import random,sys
 import matplotlib.pyplot as plt
 from imblearn.over_sampling import RandomOverSampler
+from imblearn.over_sampling import SMOTE
+from sklearn.model_selection import LeaveOneOut
 
 def main(argv):
 
@@ -106,15 +108,18 @@ def rf_train(data,label):
 
     #### Use oversampling
     # define oversampling strategy
-    oversample = RandomOverSampler(sampling_strategy='minority')
+    #oversample = RandomOverSampler(sampling_strategy='minority')
+    oversample = SMOTE(sampling_strategy='minority')
     # fit and apply the transform
     X_over, y_over = oversample.fit_resample(data, label)
     X_train, X_test, y_train, y_test = train_test_split(X_over, y_over, test_size=0.2,random_state=0)
     
 
     # parameters from previous hyperparameter tuning
+    cv = LeaveOneOut()
     tuned_parameters = [{'max_depth':[9],'bootstrap':[True],'oob_score':[False]}]
-    clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+    #clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+    clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     clf.fit(X_train,y_train)
 
     stats = {}
