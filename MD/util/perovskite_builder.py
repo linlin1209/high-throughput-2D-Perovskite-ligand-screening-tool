@@ -845,8 +845,8 @@ def main(argv):
                         place_origin = place[0]
                             
                         # Define long-axis vector and normalize
-                        #v_la = place[surface_cation["tail_atom"]] - place[0]
-                        v_la = place[1] - place[0]
+                        v_la = place[surface_cation["tail_atom"]] - place[0]
+                        #v_la = place[1] - place[0]
                         v_la = v_la / numpy.linalg.norm(v_la)
                             
                         # Angle to rotate by, convert to degrees
@@ -984,8 +984,8 @@ def main(argv):
                             place_origin = place[0]
                         
                             # Define long-axis vector and normalize
-                            #v_la = place[surface_cation["tail_atom"]] - place[0]
-                            v_la = place[1] - place[0]
+                            v_la = place[surface_cation["tail_atom"]] - place[0]
+                            #v_la = place[1] - place[0]
                             v_la = v_la / numpy.linalg.norm(v_la)
                         
                             # Angle to rotate by, convert to degrees
