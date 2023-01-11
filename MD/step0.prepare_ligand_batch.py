@@ -7,7 +7,6 @@ sys.path.append('/'.join(os.path.abspath(__file__).split('/')[:-1])+'/util')
 from monitor_jobs import *
 from matplotlib import pyplot as plt
 
-# requires init file to be rewritten present in the folder
 
 def main(argv):
 
