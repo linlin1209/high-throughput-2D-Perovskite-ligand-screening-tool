@@ -43,7 +43,7 @@ def main(argv):
    exe_dir = os.getcwd()   
 
    sys.stdout = Logger('step0.prepare_ligand')
-   print("PROGRAM CALL: python {}\n".format(' '.join([i for i in sys.argv])))
+   print("PROGRAM CALL:  python {}\n".format(' '.join([i for i in sys.argv])))
    if args.geo_flag:
       print("You're using {} as your geometry optimization method".format(args.opt_method))
    else:
