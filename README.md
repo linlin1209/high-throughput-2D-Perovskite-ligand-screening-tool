@@ -6,6 +6,7 @@
 - AmberTools: https://ambermd.org/AmberTools.php
 - Slurm: https://slurm.schedmd.com/
 ## 1. MD
+- generate_molecules.py: generate xyz files for all the ligands
 - step0.prepare_ligand_batch: parametrized xyz files in the executed folder in batch
 - step1.build_bulk_sims: writting LAMMPS MD simulation files and submitting MD jobs
 - step2.evaluate_octahedra: evaluated bond and angle deviation for each ligands' simulations
