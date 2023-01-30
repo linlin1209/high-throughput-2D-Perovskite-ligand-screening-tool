@@ -118,8 +118,8 @@ def rf_train(data,label):
     # parameters from previous hyperparameter tuning
     cv = LeaveOneOut()
     tuned_parameters = [{'max_depth':[9],'bootstrap':[True],'oob_score':[False]}]
-    #clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
-    clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
+    clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True)
+    #clf = GridSearchCV(RandomForestClassifier(),tuned_parameters,scoring='accuracy',return_train_score=True,cv=cv,n_jobs=64)
     clf.fit(X_train,y_train)
 
     stats = {}
